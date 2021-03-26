@@ -1,3 +1,6 @@
 import os
-my_variable = os.environ['X']
-print(my_variable)
+from dotenv import load_dotenv
+
+load_dotenv()
+
+INTEGER_VAR =os.getenv('INTEGER_VAR')
