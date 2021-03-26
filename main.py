@@ -3,30 +3,26 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-items = os.getenv('ITEMS')
-sum = os.getenv('SUM')
-order_num = os.getenv('ORDER_NUM')
+items = os.getenv('ITEMS'); sum = os.getenv('SUM'); order_num = os.getenv('ORDER_NUM')
 
 # 1. Касса перепутала номер в очереди с суммой. Надо поменять эти переменные местами
-sum = os.getenv('ORDER_NUM')
-order_num = os.getenv('SUM')
+sum = os.getenv('ORDER_NUM'); order_num = os.getenv('SUM')
+print(items, sum, order_num)
 # присвоил переменным нужные значения
 
 # 2. Для отчёта боссу, нужно посчитать среднюю стоимость каждой пиццы в заказе
-average_price = round(float(sum)/int(items,2))
+print(round(float(sum)/int(items), 2))
 # преобразовал значения sum и items из строчных в вещественное(float) и целое(int) числа соответственно
 # округлил(round) результат деления до сотых(2 знака после запятой)
 
 # 3. Если в сумме заказа нету дробей (.00), нужно, чтобы нули не отрисовывались
-sum = float(int(sum))
+print(int(float(sum)))
 # преобразовал строку в вещественное число, затем в целое
 
 # 4. Если у клиента в номере заказа есть цифра 2, ему положена скидка в 50%
-sum = round(float(sum)/2,2)
+print(round((float(sum))/2, 2))
 # смотри п.2
 
 # 5. Если кол-во пицц в заказе меньше 2, от номер в очереди нужно сократить на 5
-order_num = int(order_num)-5
+print(int(order_num)-5)
 # смотри "математика.начальные классы"
-
-# устроился на работу в пиццерию :)
